@@ -15,7 +15,7 @@ struct ContentView: View {
         
         NavigationView {
            
-            Text("111")
+            Text("111: \(isHome ? "true" : "false")")
             
                 .toolbar{
                     NavigationLink(isActive: $isHome) {
@@ -47,7 +47,7 @@ struct NextView: View {
         NavigationLink {
             FinalView(isHome: $isHome)
         } label: {
-            Text("2222")
+            Text("2222: \(isHome ? "true" : "false" )")
                 .padding()
         }
 
@@ -60,9 +60,9 @@ struct FinalView: View {
     @Binding var isHome: Bool
     var body: some View {
         Button {
-            self.isHome = true
+            self.isHome = false
         } label: {
-            Text("333")
+            Text("333: \(isHome ? "true" : "false")")
                 .padding()
         }
 
